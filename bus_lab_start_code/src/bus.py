@@ -1,5 +1,5 @@
-class Bus
-    def __init__(self,route_number,destination, passengers):
+class Bus:
+    def __init__ (self, route_number, destination):
         self.route_number = route_number
         self.destination = destination
         self.passengers = []
@@ -9,4 +9,12 @@ class Bus
         
     def passenger_count (self):
         return len(self.passengers)
-        
+    
+    def pick_up (self,passenger):
+        self.passengers.append(passenger)
+
+    def drop_off(self,passenger):
+        self.passengers.remove(passenger)
+    
+    def remove_all_passengers(self):
+        self.passengers.clear()
